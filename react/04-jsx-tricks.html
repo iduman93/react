@@ -15,7 +15,9 @@
       const myClassName = 'container'
       const element = (                                     //  const element = JSX ?
       <div className = {myClassName}>
-          <span>Hallo</span> <strong> World</strong>   
+          <span onClick={() => {
+            const zahl = 10;
+            console.log('hallo'+ zahl)}}>Hallo</span> <strong> World</strong>   
           </div>
       )
       ReactDOM.render(element, rootElement)
