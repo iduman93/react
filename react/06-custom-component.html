@@ -13,16 +13,33 @@
     //    )
     //            ReactDOM.render(element, document.getElementById('root'))
 
-        const Message = props => <div className = "message">{props.children}</div>
+        const Message = props => <div onClick ={props.onClick} className = "message">{props.children}</div>
         const element = (
             <div>
-                <Message>
+                <Message onClick = {() => console.log('element')} >
                     Hello World
                     <Message>Goodbye World</Message>
                     <span>Hey there</span>
                 </Message>
             </div>
         )
-            ReactDOM.render(element, document.getElementById('root'))
+        const element1 = (
+            <div>
+            <Message onClick = {() => console.log('element1')}>    
+                hallo
+            </Message>    
+            </div>
+
+        )
+            const parent = (
+                
+            <>
+                {element}
+                {element1}
+            </>    
+                
+            )
+
+            ReactDOM.render(parent, document.getElementById('root'))
     </script>
 </body>
