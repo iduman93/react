@@ -7,8 +7,17 @@
         // The text "Hello World" has 11 characters
         // The text "" has No characters
 
-    function CharacterCount({}) {
-        return null
+    function CharacterCount({text}) {
+    // JS
+      return (
+          <div>
+
+            {`The Text "${text}" has `}
+             {text.length ? <strong>{text.length}</strong>: 'NO'}
+            {' characters'}
+          </div>
+    //JS
+        )
     }
     
     const element = (
