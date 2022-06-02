@@ -13,7 +13,7 @@
           <div>
 
             {`The Text "${text} ${text1}" has `}
-             {(text.length)+(text1.length) ? <strong>{text.length}</strong>: 'NO'}
+             {(text?.length)+(text1?.length) ? <strong>{text?.length}</strong>: 'NO'}
             {' characters'}
           </div>
     //JS
@@ -29,7 +29,8 @@
 
 const element1 = (
   <>
-    <CharacterCount text1 = "TEST"/>
+    
+    <CharacterCount text="Hello World" text1 = "TEST"/>
     <CharacterCount text1 = ""/>
   </>
 )
