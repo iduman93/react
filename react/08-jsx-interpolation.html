@@ -7,13 +7,13 @@
         // The text "Hello World" has 11 characters
         // The text "" has No characters
 
-    function CharacterCount({text}) {
+    function CharacterCount({text, text1}) {
     // JS
       return (
           <div>
 
-            {`The Text "${text}" has `}
-             {text.length ? <strong>{text.length}</strong>: 'NO'}
+            {`The Text "${text} ${text1}" has `}
+             {(text.length)+(text1.length) ? <strong>{text.length}</strong>: 'NO'}
             {' characters'}
           </div>
     //JS
@@ -27,8 +27,22 @@
   </>
 )
 
+const element1 = (
+  <>
+    <CharacterCount text1 = "TEST"/>
+    <CharacterCount text1 = ""/>
+  </>
+)
+
+const parent = (
+  <>
+  {element}
+  {element1}
+  </>
+)
 
 
-            ReactDOM.render(element, document.getElementById('root'))
+
+            ReactDOM.render(parent, document.getElementById('root'))
     </script>
 </body>
