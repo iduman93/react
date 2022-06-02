@@ -7,10 +7,39 @@
 
         const rootElement = document.getElementById('root')
 
-
-        const time = new Date().toLocaleTimeString()
-        const element = <div>{time}</div>
-
+        function tick(){
+            const time = new Date().toLocaleTimeString()
+            const element = (
+                <div>
+                <div><strong> Clock</strong></div>
+                <input value={time}/>
+                <input value={time}/>
+            
+                </div>
+            )
         ReactDOM.render(element, rootElement)
+        }
+
+
+       /*  const rootElement = document.getElementById('root')
+
+        function tick(){
+            const time = new Date().toLocaleTimeString()
+            const element = `
+                <div>
+                    
+                    <input value = "${time}" />
+                    <input value = "${time}" />
+
+                </div>`
+  
+            rootElement.innerHTML = element
+        
+            }
+         */
+
+        tick()
+        setInterval(tick, 1000)
+
     </script>
 </body>
