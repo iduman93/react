@@ -5,6 +5,83 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
 
+        const rootElement = document.getElementById('root')
+
+        const state = {eventCount: 0, username: ''}
+
+        function App(){
+            function handleclick(){
+                setState({eventCount:state.eventCount +1})
+            }
+
+        function handleChange(event){
+            console.log(event)
+            setState({username: event.target.value})
+        }
+            return(
+
+                <div>
+                    <p>There have been {state.eventCount} events.</p>
+                    <p>
+                        <button onClick={handleclick}>Click Me</button>    
+                    </p>
+                    <p>You typed: {state.username}</p>
+                    <p>
+                        <input onChange={handleChange}/>
+                    </p>
+                </div>
+            )
+        }
+
+        function setState(newState) {
+            Object.assign(state, newState)
+            renderApp()
+        }
+
+        function renderApp(){
+            ReactDOM.render(<App />, document.getElementById('root'))
+        }
+
+        renderApp()
+
+
+      /*   const rootElement = document.getElementById('root')
+const state = {eventCount: 0, username: ''}
+
+function App(){
+    return(
+
+        <div>
+            <p>There have been {state.eventCount} events.</p>
+            <p>
+                <button onClick={() => setState({eventCount: state.eventCount + 1})}>
+                Click Me
+                </button>    
+            </p>
+            <p>You typed: {state.username}</p>
+            <p>
+                <input onChange={event => setState({username: event.target.value}) }/>
+            </p>
+        </div>
+    )
+}
+
+function setState(newState) {
+    Object.assign(state, newState)
+    renderApp()
+}
+
+function renderApp(){
+    ReactDOM.render(<App />, document.getElementById('root'))
+}
+
+renderApp()
+
+SCHREIBWEISE OHNE FUNCTION
+
+ */
+
+
 
     </script>
 
