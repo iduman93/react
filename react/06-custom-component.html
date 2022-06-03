@@ -13,10 +13,11 @@
     //    )
     //            ReactDOM.render(element, document.getElementById('root'))
 
-        const Message = props => <div onClick ={props.onClick} className = "message">{props.text}</div>
+        const Message = props => 
+        <div onClick ={props.onClick} className = "message">{props.children}</div>
         const element = (
       
-                <Message text = 'test' onClick = {() => console.log('element')} >
+                <Message onClick = {() => console.log('element')} >
                     Hello World
                     <Message>Goodbye World</Message>
                     <span>Hey there</span>
