@@ -8,14 +8,13 @@
         const rootElement = document.getElementById('root')
 
         function Tick(){
-            const time = new Date().toLocaleTimeString()
-            const kal = new Date().toLocaleTimeString()
 
-            const current = `${kal.getDate()}/${kal.getMonth()+1}/${kal.getFullYear()}`
+            const time = new Date().toLocaleTimeString()
+            const current = `${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}`
 
             const [date, setDate] = React.useState(time)
             const [date1, setDate1] = React.useState(current)
-            
+
             function refreshtick () {
                 const newTime = new Date().toLocaleTimeString()
                 setDate(newTime) 
