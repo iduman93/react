@@ -9,24 +9,38 @@
 
         function Tick(){
             const time = new Date().toLocaleTimeString()
+            const kal = new Date().toLocaleTimeString()
+
+            const current = `${kal.getDate()}/${kal.getMonth()+1}/${kal.getFullYear()}`
+
             const [date, setDate] = React.useState(time)
+            const [date1, setDate1] = React.useState(current)
+            
             function refreshtick () {
                 const newTime = new Date().toLocaleTimeString()
                 setDate(newTime) 
                 
             } 
             setInterval(refreshtick ,1000)
-            
+
+
             const element = (
                 <div>
                 <div><strong> Clock</strong></div>
                 <input readOnly value={date}/>
-                <input readOnly value={date}/>            
+                <input readOnly value={date1}/>            
                 </div>
             )
                 return element
         }
         
+/*         function App(){
+            const kal = new Date().toLocalTimeString()
+            const [kalender, setKalender] = React.useState(current)
+            const current = `${kal.getDate()}/${kal.getMonth()+1}/${kal.getFullYear()}`
+        } */
+            
+
 
       
         ReactDOM.render(<Tick/>, rootElement)
