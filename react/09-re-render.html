@@ -10,7 +10,8 @@
         function Tick(){
 
             const time = new Date().toLocaleTimeString()
-            const current = `${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}`
+            const toDay = new Date()
+            const current = `${toDay.getDate()}/${toDay.getMonth()+1}/${toDay.getFullYear()}`
 
             const [date, setDate] = React.useState(time)
             const [date1, setDate1] = React.useState(current)
