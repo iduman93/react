@@ -7,7 +7,7 @@
 
         const rootElement = document.getElementById('root')
 
-        const state = {eventCount: 0, username: ''}
+        const state = {eventCount: 0, username: '', input: '', testCount: 0}
 
         function App(){
             function handleclick(){
@@ -17,6 +17,14 @@
         function handleChange(event){
             console.log(event)
             setState({username: event.target.value})
+        }
+
+        function testInput(input){
+            setState({input: input.target.value})
+        }
+
+        function testClick(){
+            setState({testCount: state.testCount +1})
         }
             return(
 
@@ -28,6 +36,13 @@
                     <p>You typed: {state.username}</p>
                     <p>
                         <input onChange={handleChange}/>
+                    </p>
+                    <p>Test input field {state.input}</p>
+                    <input onChange = {testInput}/>
+
+                    <p>This is a Test Click Button {state.testCount}</p>
+                    <p>
+                        <button onClick={testClick}>Click to test</button>    
                     </p>
                 </div>
             )
